@@ -1,4 +1,4 @@
-module gorabbitmq
+module github.com/seehi/gorabbitmq
 
 go 1.15
 
