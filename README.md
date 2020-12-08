@@ -1,5 +1,5 @@
 # Gorabbitmq
-robust rabbitmq producer, auto reconnect
+robust producer, auto reconnect when connection or channel is closed
 # Installation
 ```
 go get -u github.com/seehi/gorabbitmq
