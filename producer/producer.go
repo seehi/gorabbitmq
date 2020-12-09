@@ -53,8 +53,7 @@ func (p *Producer) connect() {
 
 // initChannel ensure channel, then monitor the close of connection&channel and the confirm of message
 func (p *Producer) initChannel() (err error) {
-	p.channel, err = p.conn.Channel()
-	if err != nil {
+	if p.channel, err = p.conn.Channel(); err != nil {
 		return
 	}
 	if err = p.channel.Confirm(false); err != nil {
