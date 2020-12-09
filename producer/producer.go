@@ -23,12 +23,12 @@ type Producer struct {
 }
 
 // New create a Producer with successful connection, otherwise it will retry until success
-func New(user, password, host, port string) (p *Producer) {
-	p = &Producer{
+func New(user, password, host, port string) *Producer {
+	p := &Producer{
 		url: fmt.Sprintf("amqp://%s:%s@%s:%s/", user, password, host, port),
 	}
 	p.connect()
-	return
+	return p
 }
 
 // connect ensure connection and channel
