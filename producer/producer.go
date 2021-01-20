@@ -67,7 +67,7 @@ func (p *Producer) initChannel() (err error) {
 // listenClose will reconnect if connnection or channel close
 func (p *Producer) listenClose() {
 	var (
-		err error
+		err *amqp.Error
 		tip string
 	)
 	p.connClose = p.conn.NotifyClose(make(chan *amqp.Error))
